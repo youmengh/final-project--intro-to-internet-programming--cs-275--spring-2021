@@ -1,0 +1,16 @@
+*
+
+!gulpfile.js
+!README.md
+!.gitignore
+!.editorconfig
+!.eslintrc.json
+!.stylelintrc.json
+!package.json
+!package-lock.json
+
+# Don’t ignore the entire application
+!app/index.html
+!app/css/
+!app/js/
+!app/img/
