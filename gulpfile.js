@@ -151,7 +151,7 @@ exports.lintCSS = lintCSS;
 exports.compressCSS = compressCSS;
 exports.transpileJSForDev = transpileJSForDev;
 exports.transpileJSForProd = transpileJSForProd;
-exports.compressImages = compressImages;
+//exports.compressImages = compressImages;
 exports.copyUnprocessedAssetsToProd = copyUnprocessedAssetsToProd;
 exports.clean = clean;
 exports.serve = series (
@@ -165,6 +165,6 @@ exports.build = series (
     compressHTML,
     compressCSS,
     transpileJSForProd,
-    compressImages,
+    //compressImages,
     copyUnprocessedAssetsToProd
 );
