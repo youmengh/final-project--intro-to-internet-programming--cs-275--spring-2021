@@ -86,8 +86,8 @@ let compressImages = () => {
 
 let copyUnprocessedAssetsToProd = () => {
     return src([
-        `app/*.*`,        // Source all files,
-        `app/**`,         // and all folders,
+        `app/*.*`,      // Source all files,
+        `app/**`,       // and all folders,
         `!app/html/**`, // but, ignore HTML files;
         `!app/css/**`,  // ignore CSS files;
         `!app/js/**`,   // ignore JS files;
