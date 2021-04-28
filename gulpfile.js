@@ -66,6 +66,13 @@ let transpileJSForProd = () => {
         .pipe(dest(`prod/js`));
 };
 
+/**
+ * Copy images located under `app/img`, compress them, then write them to the
+ * `prod/img` folder. The original images remain unmodified.
+ *
+ * In order to use this task in your production track, uncomment below, in the
+ * exports section.
+ **/
 let compressImages = () => {
     return src(`app/img/**/*`)
         .pipe(cache(
