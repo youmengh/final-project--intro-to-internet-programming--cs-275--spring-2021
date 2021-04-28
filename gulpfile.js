@@ -39,10 +39,10 @@ let lintCSS = () => {
 let compressCSS = () => {
     return src(`app/css/*.css`)
         .pipe(cssCompressor({"debug": true}, (details) => {
-            console.log(`Original CSS file size:
-                ${details.name}: ${details.stats.originalSize}`);
-            console.log(`Minified CSS file size:
-                ${details.name}: ${details.stats.minifiedSize}`);
+            console.log(`\n\tOriginal CSS file size: ` +
+                `${details.name}: ${details.stats.originalSize}`);
+            console.log(`\tMinified CSS file size: ` +
+                `${details.name}: ${details.stats.minifiedSize}\n`);
         }))
         .pipe(dest(`prod/css`));
 };
