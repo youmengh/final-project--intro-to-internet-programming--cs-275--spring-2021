@@ -102,9 +102,16 @@ let serve = () => {
         notify: true,
         reloadDelay: 0,
         server: {
+            /* The order below is important:
+             *
+             * 1. Retrieve `index.html` from the `app/html` directory
+             * 2. Load transpiled JS from the `temp` directory
+             * 3. And, finally, retrieve CSS from the `app/css` directory
+             */
             baseDir: [
-                `app`,
-                `temp`
+                `app/html`,
+                `temp`,
+                `app`
             ]
         }
     });
