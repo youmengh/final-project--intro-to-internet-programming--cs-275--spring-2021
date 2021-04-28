@@ -13,14 +13,12 @@ const jsLinter = require(`gulp-eslint`);
 const reload = browserSync.reload;
 
 let validateHTML = () => {
-    return src([
-        `app/html/*.html`,
-        `app/html/**/*.html`])
+    return src(`app/html/*.html`)
         .pipe(htmlValidator({"verbose": true}));
 };
 
 let compressHTML = () => {
-    return src([`app/index.html`,`app/**/*.html`])
+    return src(`app/html/*.html`)
         .pipe(htmlCompressor({collapseWhitespace: true}))
         .pipe(dest(`prod`));
 };
@@ -90,10 +88,10 @@ let copyUnprocessedAssetsToProd = () => {
     return src([
         `app/*.*`,        // Source all files,
         `app/**`,         // and all folders,
-        `!app/*.html`,    // but, ignore HTML files;
+        `!app/html/*.html`,    // but, ignore HTML files;
         `!app/css/*.css`, // ignore CSS files;
         `!app/js/*.js`,   // ignore JS files;
-        `!app/img/`       // and, ignore images.
+        `!app/img/*`       // and, ignore images.
     ], {dot: true}).pipe(dest(`prod`));
 };
 
