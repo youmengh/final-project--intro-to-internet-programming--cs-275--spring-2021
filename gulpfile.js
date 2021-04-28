@@ -88,10 +88,10 @@ let copyUnprocessedAssetsToProd = () => {
     return src([
         `app/*.*`,        // Source all files,
         `app/**`,         // and all folders,
-        `!app/html/*.html`,    // but, ignore HTML files;
-        `!app/css/*.css`, // ignore CSS files;
-        `!app/js/*.js`,   // ignore JS files;
-        `!app/img/*`       // and, ignore images.
+        `!app/html/**`, // but, ignore HTML files;
+        `!app/css/**`,  // ignore CSS files;
+        `!app/js/**`,   // ignore JS files;
+        `!app/img/**`   // and, ignore images.
     ], {dot: true}).pipe(dest(`prod`));
 };
 
