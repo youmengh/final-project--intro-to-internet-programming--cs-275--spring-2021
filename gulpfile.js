@@ -7,7 +7,7 @@ const cssLinter = require(`gulp-stylelint`);
 const del = require(`del`);
 const htmlCompressor = require(`gulp-htmlmin`);
 const htmlValidator = require(`gulp-html`);
-const imageCompressor = require(`gulp-imagemin`);
+// const imageCompressor = require(`gulp-imagemin`);
 const jsCompressor = require(`gulp-uglify`);
 const jsLinter = require(`gulp-eslint`);
 const reload = browserSync.reload;
@@ -71,18 +71,18 @@ let transpileJSForProd = () => {
  * In order to use this task in your production track, uncomment below, in the
  * exports section.
  **/
-let compressImages = () => {
-    return src(`app/img/**/*`)
-        .pipe(cache(
-            imageCompressor({
-                optimizationLevel: 3, // For PNG files. Accepts 0 – 7; 3 is default.
-                progressive: true,    // For JPG files.
-                multipass: false,     // For SVG files. Set to true for compression.
-                interlaced: false     // For GIF files. Set to true for compression.
-            })
-        ))
-        .pipe(dest(`prod/img`));
-};
+// let compressImages = () => {
+//     return src(`app/img/**/*`)
+//         .pipe(cache(
+//             imageCompressor({
+//                 optimizationLevel: 3, // For PNG files. Accepts 0 – 7; 3 is default.
+//                 progressive: true,    // For JPG files.
+//                 multipass: false,     // For SVG files. Set to true for compression.
+//                 interlaced: false     // For GIF files. Set to true for compression.
+//             })
+//         ))
+//         .pipe(dest(`prod/img`));
+// };
 
 let copyUnprocessedAssetsToProd = () => {
     return src([
