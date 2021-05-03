@@ -77,6 +77,8 @@ let copyUnprocessedAssetsToProd = () => {
 
 let serve = () => {
     browserSync({
+        notify: true,
+        reloadDelay: 0,
         server: {
             /* The order below is important:
              *
