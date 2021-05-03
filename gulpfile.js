@@ -102,7 +102,7 @@ let serve = () => {
         series(lintCSS)
     ).on(`change`, reload);
 
-    watch(`app/*.html`,
+    watch(`app/html/*.html`,
         series(validateHTML)
     ).on(`change`, reload);
 
