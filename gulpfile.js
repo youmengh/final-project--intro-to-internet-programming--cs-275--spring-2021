@@ -64,26 +64,6 @@ let transpileJSForProd = () => {
         .pipe(dest(`prod/js`));
 };
 
-/**
- * Copy images located under `app/img`, compress them, then write them to the
- * `prod/img` folder. The original images remain unmodified.
- *
- * In order to use this task in your production track, uncomment below, in the
- * exports section.
- **/
-// let compressImages = () => {
-//     return src(`app/img/**/*`)
-//         .pipe(cache(
-//             imageCompressor({
-//                 optimizationLevel: 3, // For PNG files. Accepts 0 – 7; 3 is default.
-//                 progressive: true,    // For JPG files.
-//                 multipass: false,     // For SVG files. Set to true for compression.
-//                 interlaced: false     // For GIF files. Set to true for compression.
-//             })
-//         ))
-//         .pipe(dest(`prod/img`));
-// };
-
 let copyUnprocessedAssetsToProd = () => {
     return src([
         `app/*.*`,      // Source all files,
@@ -154,7 +134,6 @@ exports.lintCSS = lintCSS;
 exports.compressCSS = compressCSS;
 exports.transpileJSForDev = transpileJSForDev;
 exports.transpileJSForProd = transpileJSForProd;
-//exports.compressImages = compressImages;
 exports.copyUnprocessedAssetsToProd = copyUnprocessedAssetsToProd;
 exports.clean = clean;
 exports.serve = series (
@@ -168,6 +147,5 @@ exports.build = series (
     compressHTML,
     compressCSS,
     transpileJSForProd,
-    //compressImages,
     copyUnprocessedAssetsToProd
 );
