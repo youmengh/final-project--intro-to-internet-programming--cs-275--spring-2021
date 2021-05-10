@@ -25,5 +25,17 @@ function Draw() {
         }
         x.innerHTML += "<br />";
     }
+    numSpace = 1;
+    for(let i = 1; i <= (size-1)/2; i++) {
+        for(let j = 0; j < numSpace; j++) {
+            x.innerHTML += "&nbsp;&nbsp;";
+        }
+        numSpace++;
+        numStar = size - (i*2);
+        for(let k = 0; k < numStar; k++) {
+            x.innerHTML += "*";
+        }
+        x.innerHTML += "<br />";
+    }
 
 }
