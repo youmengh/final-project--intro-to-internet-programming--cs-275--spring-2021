@@ -96,6 +96,8 @@ function runAnimation() {
     let box = document.getElementById("diamond-container");
     let styleLeft = 0;
     let rightMost = false;
+    box.style.color = `blue`;
+    box.style.border = `2px solid blue`;
 
     function slide() {
         let border = document.querySelector(`html`).clientWidth - document.getElementById("diamond-container").clientWidth;
@@ -107,11 +109,15 @@ function runAnimation() {
         }
         //When diamond hit the right most or passed boundary
         if (styleLeft >= border) {
+            box.style.color = `red`;
+            box.style.border = `2px solid red`;
             styleLeft--;
             rightMost = true;
         }
         //When diamond hit the left most or passed boundary
         if (styleLeft <= 0) {
+            box.style.color = `blue`;
+            box.style.border = `2px solid blue`;
             styleLeft++;
             rightMost = false;
         }
@@ -120,6 +126,7 @@ function runAnimation() {
         if (rightMost) {
             styleLeft--;
         }
+        box.style.left = styleLeft+`px`;
 
     };
 
