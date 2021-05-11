@@ -3,7 +3,7 @@ windows.onload = () => {
         `background-color: yellow; font-weight: bold;`);
 }
 
-function Draw() {
+function drawDiamond() {
 
     let user = prompt("Enter the size of diamond: ", "1");
     let size = parseInt(user);
