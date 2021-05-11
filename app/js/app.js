@@ -1,11 +1,10 @@
 window.onload = () => {
-    drawDiamond();
-}
-
-function drawDiamond() {
-
     let user = prompt("Enter the size of diamond: ", "1");
     let size = parseInt(user);
+    drawDiamond(size);
+}
+
+function drawDiamond(size) {
 
     if (size % 2 == 0) {        //If size is even, prints even-sized diamond
 
