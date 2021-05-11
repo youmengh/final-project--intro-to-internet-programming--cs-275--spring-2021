@@ -1,4 +1,6 @@
 div {
   border: 2px solid black;
   position: absolute;
+  left: 0;
+  top: 0;
 }
