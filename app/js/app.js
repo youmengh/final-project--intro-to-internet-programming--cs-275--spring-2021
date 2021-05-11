@@ -2,6 +2,7 @@ window.onload = () => {
     let user = prompt("Enter the size of diamond: ", "1");
     let size = parseInt(user);
     drawDiamond(size);
+    runAnimation();
 }
 
 function drawDiamond(size) {
@@ -89,4 +90,39 @@ function drawDiamond(size) {
             x.innerHTML += "<br />";
         }
     }
+}
+
+function runAnimation() {
+    let box = document.getElementById("diamond-container");
+    let styleLeft = 0;
+    let rightMost = false;
+
+    function slide() {
+        let border = document.querySelector(`html`).clientWidth - document.getElementById("diamond-container").clientWidth;
+
+        //When left offset is less than border and
+        //diamond has not yet hit the right most
+        if(styleLeft < border && !rightMost) {
+            styleLeft++;
+        }
+        //When diamond hit the right most or passed boundary
+        if (styleLeft >= border) {
+            styleLeft--;
+            rightMost = true;
+        }
+        //When diamond hit the left most or passed boundary
+        if (styleLeft <= 0) {
+            styleLeft++;
+            rightMost = false;
+        }
+        //When diamond has hit the right most and needs to be
+        //pushed back all the way to the left
+        if (rightMost) {
+            styleLeft--;
+        }
+
+    };
+
+    setInterval(slide,1);
+    
 }
