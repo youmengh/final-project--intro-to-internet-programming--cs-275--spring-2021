@@ -58,18 +58,22 @@ function Draw() {
             x.innerHTML += "<br / >";
         }
     } else {        //If size is odd, prints odd-sized diamond
+
+        let numStar = 0;
+        let numSpace = (size-1)/2;
+
         let x = document.getElementById("diamond-container");
         x.innerHTML = "";
 
         //Prints top half of diamond
         for(let row = 0; row < (size/2); row++) {
             for(let col = 0; col < numSpace; col++) {       //Prints spaces
-                x.innerHTML += "&nbsp;&nbsp;";
+                x.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;";
             }
             numSpace--;
             numStar = (row*2) + 1;
             for(let k = 0; k < numStar; k++) {              //Prints stars
-                x.innerHTML += "*";
+                x.innerHTML += "&nbsp;*&nbsp;";
             }
             x.innerHTML += "<br />";
         }
@@ -77,12 +81,12 @@ function Draw() {
         //Prints bottom half of diamond
         for(let row = 1; row <= (size-1)/2; row++) {
             for(let col = 0; col < numSpace; col++) {       //Prints spaces
-                x.innerHTML += "&nbsp;&nbsp;";
+                x.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;";
             }
             numSpace++;
             numStar = size - (row*2);
             for(let k = 0; k < numStar; k++) {              //Prints stars
-                x.innerHTML += "*";
+                x.innerHTML += "&nbsp;*&nbsp;";
             }
             x.innerHTML += "<br />";
         }
