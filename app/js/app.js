@@ -1,6 +1,5 @@
-windows.onload = () => {
-    console.log(`%c colavaScript works!`,
-        `background-color: yellow; font-weight: bold;`);
+window.onload = () => {
+    drawDiamond();
 }
 
 function drawDiamond() {
