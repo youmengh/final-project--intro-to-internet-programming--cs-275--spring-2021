@@ -7,7 +7,7 @@ window.onload = () => {
         box.style.color = `blue`;
         box.style.border = `2px solid blue`;
 
-        function slide() {
+        let slide = () => {
             let border = document.querySelector(`html`).clientWidth - document.getElementById("diamond-container").clientWidth;
 
             //When left offset is less than border and
